@@ -39,7 +39,7 @@
   *,*::before,*::after{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
-    margin:0; font-family:var(--sans); background:var(--plum); color:var(--alabaster);
+    margin:0; font-family:var(--sans); background:var(--navy); color:var(--alabaster);
     -webkit-font-smoothing:antialiased; overflow-x:hidden; cursor:auto;
   }
   img{ max-width:100%; display:block; }
@@ -70,23 +70,6 @@
     backdrop-filter: blur(30px) saturate(160%);
     -webkit-backdrop-filter: blur(30px) saturate(160%);
   }
-  .glass::before{
-    content:'';
-    position:absolute; inset:0; z-index:0; pointer-events:none;
-    background: linear-gradient(115deg,
-      rgba(244,241,234,0) 30%,
-      rgba(244,241,234,0.10) 46%,
-      rgba(244,241,234,0.16) 50%,
-      rgba(244,241,234,0.10) 54%,
-      rgba(244,241,234,0) 70%);
-  }
-  .glass::after{
-    content:'';
-    position:absolute; inset:0; z-index:0; pointer-events:none;
-    opacity:.05; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .glass > *{ position:relative; z-index:1; }
   .brass-rule{ width:52px; height:1px; background:var(--brass-hi); }
 
   .eyebrow{
@@ -423,7 +406,7 @@
 </header>
 
 <!-- ============================= I. FOYER ============================= -->
-<section id="foyer" style="background:var(--plum);">
+<section id="foyer">
   <div class="glow" style="width:900px;height:900px;background:var(--gold);top:-260px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="brass-rule"></span>Cat. No. I — Foyer</div>
@@ -461,8 +444,8 @@
 </section>
 
 <!-- ============================= II. GALLERY — music wing ============================= -->
-<section id="gallery" style="background:var(--navy);">
-  <div class="glow" style="width:600px;height:600px;background:var(--emerald);bottom:-200px;left:-160px;opacity:.5;"></div>
+<section id="gallery">
+  <div class="glow" style="width:700px;height:700px;background:var(--plum);top:-160px;left:50%;transform:translateX(-50%);opacity:.4;"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="brass-rule"></span>Cat. No. II — Gallery</div>
     <h2 class="section-title">HeART Museum</h2>
@@ -580,8 +563,8 @@
 </div>
 
 <!-- ============================= III. STAGE ============================= -->
-<section id="stage" style="background:var(--emerald);">
-  <div class="glow" style="width:720px;height:720px;background:var(--gold);top:40px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
+<section id="stage">
+  <div class="glow" style="width:720px;height:720px;background:var(--gold);top:40px;left:50%;transform:translateX(-50%);opacity:.16;"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="brass-rule"></span>Cat. No. III — Stage</div>
     <p class="stage-line">"The record became a room."</p>
@@ -628,8 +611,8 @@
 </section>
 
 <!-- ============================= IV. STUDIO ============================= -->
-<section id="studio" style="background:var(--plum);">
-  <div class="glow" style="width:520px;height:520px;background:var(--gold);bottom:-160px;left:-140px;opacity:.1;"></div>
+<section id="studio">
+  <div class="glow" style="width:520px;height:520px;background:var(--gold);bottom:-160px;left:-140px;opacity:.08;"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="brass-rule"></span>Cat. No. IV — Studio</div>
     <p class="studio-line">"From the first idea to the finished record."</p>
@@ -667,8 +650,8 @@
 </section>
 
 <!-- ============================= V. ARCHIVE ============================= -->
-<section id="archive" style="background:var(--navy);">
-  <div class="glow" style="width:780px;height:780px;background:var(--emerald);top:-100px;left:50%;transform:translateX(-50%);opacity:.65;"></div>
+<section id="archive">
+  <div class="glow" style="width:780px;height:780px;background:var(--emerald);top:-100px;left:50%;transform:translateX(-50%);opacity:.32;"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="brass-rule"></span>Cat. No. V — Archive</div>
     <h2 class="section-title">Press, credentials, and recognition.</h2>
@@ -723,7 +706,7 @@
 </section>
 
 <!-- ============================= VI. VISIT ============================= -->
-<section id="visit" style="background:var(--plum);">
+<section id="visit">
   <div class="glow" style="width:780px;height:780px;background:var(--gold);top:120px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="brass-rule"></span>Cat. No. VI — Visit</div>
