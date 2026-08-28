@@ -73,6 +73,35 @@
   }
   .brass-rule{ width:52px; height:1px; background:var(--brass-hi); }
 
+  /* Primary hero button — warm gold glass with ambient glow, matches your Figma pill */
+  .btn-glass-gold{
+    background: radial-gradient(120% 160% at 50% 50%, rgba(230,199,102,0.55), rgba(156,122,60,0.35));
+    border: 1px solid rgba(212,175,55,0.6);
+    border-radius: 999px;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 0 70px 6px rgba(212,175,55,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+    color: var(--plum);
+  }
+  .btn-glass-gold:hover{
+    box-shadow: 0 0 90px 10px rgba(212,175,55,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  
+  /* Secondary hero button — same glass mechanics, quieter neutral tint, keeps the hierarchy */
+  .btn-glass-outline{
+    background: linear-gradient(160deg, rgba(244,241,234,0.10), rgba(244,241,234,0.03));
+    border: 1px solid var(--gold-hair);
+    border-radius: 999px;
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    box-shadow: 0 0 40px 2px rgba(212,175,55,0.12), inset 0 1px 0 rgba(244,241,234,0.15);
+    color: var(--alabaster);
+  }
+  .btn-glass-outline:hover{
+    border-color: var(--gold);
+    box-shadow: 0 0 55px 4px rgba(212,175,55,0.2), inset 0 1px 0 rgba(244,241,234,0.2);
+  }
+
   .eyebrow{
     display:flex; align-items:center; justify-content:center; gap:14px; font-size:.7rem;
     letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-bottom:22px;
@@ -400,8 +429,8 @@
     </div>
     <p class="hero-tagline">Eight songs. <span class="gold-accent">One live band.</span> No shortcuts.</p>
     <div class="hero-actions">
-      <a href="#gallery" class="mus-btn btn-gold" data-link>Enter the Gallery / Listen</a>
-      <a href="#stage" class="mus-btn btn-outline" data-link>Watch Live Staging</a>
+      <a href="#gallery" class="mus-btn btn-glass-gold" data-link>Enter the Gallery / Listen</a>
+      <a href="#stage" class="mus-btn btn-glass-outline" data-link>Watch Live Staging</a>
     </div>
   </div>
 </header>
