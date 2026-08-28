@@ -74,15 +74,29 @@
   .glass{
     --glass-tint: 11,19,43; /* default = navy, i.e. "everything else" needs no extra class */
     position:relative;
+    overflow:hidden; /* keeps the new inner glow contained to the card's rounded corners */
     background:
-      linear-gradient(160deg, rgba(244,241,234,0.05), rgba(244,241,234,0.015)),
-      linear-gradient(160deg, rgba(var(--glass-tint),0.14), rgba(var(--glass-tint),0.03));
+      linear-gradient(160deg, rgba(244,241,234,0.06), rgba(244,241,234,0.02)),
+      rgba(var(--glass-tint), 0.55);
     border: 1px solid var(--gold-hair);
     border-radius:4px;
     backdrop-filter: blur(30px) saturate(160%);
     -webkit-backdrop-filter: blur(30px) saturate(160%);
     box-shadow: 0 24px 60px -28px rgba(0,0,0,.65), inset 0 1px 0 rgba(244,241,234,0.10);
   }
+  /* Inner glow — a soft blurred ellipse of the card's own tint, sitting inside it for
+     depth, exactly like the "Ellipse 1" layer in your Figma reference. Different from
+     the diagonal streak you had removed earlier — this is a centered radial glow, not
+     a directional light sweep. */
+  .glass::before{
+    content:'';
+    position:absolute; z-index:0; pointer-events:none;
+    left:50%; top:50%; transform:translate(-50%,-50%);
+    width:92%; height:65%;
+    background: rgba(var(--glass-tint), 0.85);
+    filter: blur(38px);
+  }
+  .glass > *{ position:relative; z-index:1; }
   
   /* Room-specific tints — swap only the color, mechanics (blur/radius/shadow) stay identical */
   .glass-plum{ --glass-tint: 26,11,46; }
@@ -300,12 +314,12 @@
   /* ---------------- Stage ---------------- */
   .stage-line{ font-family:var(--serif); font-style:italic; font-size:clamp(1.4rem,2.6vw,2rem); margin-bottom:44px; color:var(--gold); text-align:center; }
   .video-note{ font-size:.78rem; color:var(--alabaster-dim); opacity:.75; margin-bottom:40px; text-align:center; }
-  .lead-video{ padding:18px; margin:52px 0 18px; max-width:920px; margin-left:auto; margin-right:auto; }
+  .lead-video{ padding:18px; margin:52px 0 18px; max-width:920px; margin-left:auto; margin-right:auto; border-radius:20px; overflow:hidden; }
   .video-meta-caption{
     text-align:center; margin-top:16px; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--alabaster-dim);
   }
   .video-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; margin-bottom:56px; }
-  .video-card{ border:1px solid var(--gold-hair); overflow:hidden; }
+  .video-card{ border:1px solid var(--gold-hair); border-radius:20px; overflow:hidden; }
   .video-frame{ position:relative; aspect-ratio:16/9; background:rgba(0,0,0,.5); overflow:hidden; }
   .video-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   .video-meta{ padding:20px 22px; text-align:center; }
@@ -324,11 +338,7 @@
   }
   /* Selected work — four museum wall panels: brass top rule, roman numeral, restrained */
   .portfolio-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:880px; margin:0 auto; }
-  .studio-panel{
-    text-align:center; padding:34px 30px; border-top:2px solid var(--brass-hi);
-    border-left:1px solid var(--gold-hair-soft);
-  }
-  .studio-panel:nth-child(odd){ border-left:none; }
+  .studio-panel{ text-align:center; padding:34px 30px; border-radius:20px; }
   .studio-panel .pn{ font-family:var(--serif); font-style:italic; font-weight:600; font-size:2rem; color:var(--gold); display:block; margin-bottom:12px; }
   .studio-panel h4{ font-size:1.05rem; margin-bottom:10px; }
   .studio-panel p{ font-size:.86rem; line-height:1.65; color:var(--alabaster-dim); margin:0; }
@@ -628,7 +638,7 @@
     <p class="stage-line">"The record became a room."</p>
 
     <!-- Lead bandstand footage — 16-piece live ensemble -->
-    <div class="lead-video glass glass-emerald">
+    <div class="lead-video glass glass-plum">
       <div class="video-frame no-thumb">
         <iframe src="https://www.youtube-nocookie.com/embed/LfzEVg0-db0" title="HeART Museum Live — 16-Piece Bandstand" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -637,7 +647,7 @@
     <p class="video-note">Placeholder footage until the confirmed Vinyl at Center Stage reel is delivered.</p>
 
     <div class="video-grid">
-      <div class="video-card glass glass-emerald">
+      <div class="video-card glass glass-plum">
         <div class="video-frame">
           <iframe src="https://www.youtube-nocookie.com/embed/g3J3i8RFFl8" title="A Day — Official Music Video" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -646,7 +656,7 @@
           <div class="award-row"><span class="award-chip">Best Original Music Video Winner · 2026</span></div>
         </div>
       </div>
-      <div class="video-card glass glass-emerald">
+      <div class="video-card glass glass-plum">
         <div class="video-frame">
           <iframe src="https://www.youtube-nocookie.com/embed/HApAKDlnAcU" title="Fireflies — Official Music Video" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -679,22 +689,22 @@
 
     <!-- Selected work — four wall panels, museum-numbered, not freelance-marketplace cards -->
     <div class="portfolio-grid">
-      <div class="studio-panel glass glass-gold">
+      <div class="studio-panel glass glass-emerald">
         <span class="pn">I</span>
         <h4>Original Composition</h4>
         <p>Full-length songwriting, from first idea to lead sheet, built for live ensemble arrangement.</p>
       </div>
-      <div class="studio-panel glass glass-gold">
+      <div class="studio-panel glass glass-emerald">
         <span class="pn">II</span>
         <h4>Vocal Production</h4>
         <p>Lead and background vocal production across soul, R&amp;B and classical-adjacent repertoire.</p>
       </div>
-      <div class="studio-panel glass glass-gold">
+      <div class="studio-panel glass glass-emerald">
         <span class="pn">III</span>
         <h4>Live Ensemble Orchestration</h4>
         <p>Strings and horns, scored for a full live band — not a programmed session.</p>
       </div>
-      <div class="studio-panel glass glass-gold">
+      <div class="studio-panel glass glass-emerald">
         <span class="pn">IV</span>
         <h4>Artist Development</h4>
         <p>Guidance carried from first idea through a finished, performance-ready record.</p>
