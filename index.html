@@ -63,14 +63,32 @@
   /* ---------------- Glass + brass system ----------------
      Restrained glassmorphism: translucent frosted panel, brass hairline edge,
      faint inner top highlight to sell the "glass" catching light. ---------- */
-  .glass{
+  /*.glass{
     position:relative;
     background: linear-gradient(160deg, rgba(244,241,234,0.045), rgba(244,241,234,0.012));
     border: 1px solid var(--gold-hair);
     box-shadow: 0 24px 60px -28px rgba(0,0,0,.65), inset 0 1px 0 rgba(244,241,234,0.10);
     backdrop-filter: blur(30px) saturate(160%);
     -webkit-backdrop-filter: blur(30px) saturate(160%);
+  } */
+  .glass{
+    --glass-tint: 11,19,43; /* default = navy, i.e. "everything else" needs no extra class */
+    position:relative;
+    background:
+      linear-gradient(160deg, rgba(244,241,234,0.05), rgba(244,241,234,0.015)),
+      linear-gradient(160deg, rgba(var(--glass-tint),0.14), rgba(var(--glass-tint),0.03));
+    border: 1px solid var(--gold-hair);
+    border-radius:4px;
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(160%);
+    box-shadow: 0 24px 60px -28px rgba(0,0,0,.65), inset 0 1px 0 rgba(244,241,234,0.10);
   }
+  
+  /* Room-specific tints — swap only the color, mechanics (blur/radius/shadow) stay identical */
+  .glass-plum{ --glass-tint: 26,11,46; }
+  .glass-emerald{ --glass-tint: 10,34,24; }
+  .glass-gold{ --glass-tint: 212,175,55; }
+  
   .brass-rule{ width:52px; height:1px; background:var(--brass-hi); }
 
   /* Primary hero button — warm gold glass with ambient glow, matches your Figma pill */
@@ -449,22 +467,22 @@
 
     <!-- Impact pillars -->
     <div class="pillars">
-      <div class="pillar glass">
+      <div class="pillar glass glass-plum">
         <span class="pn">25</span>
         <h4>Live Musicians</h4>
         <p>HeART Museum was fully composed, arranged, and recorded with 25 Atlanta musicians.</p>
       </div>
-      <div class="pillar glass">
+      <div class="pillar glass glass-plum">
         <span class="pn">16</span>
         <h4>Piece Live Ensemble</h4>
         <p>Sold-out headline concert performance at Vinyl at Center Stage in Atlanta.</p>
       </div>
-      <div class="pillar glass">
+      <div class="pillar glass glass-plum">
         <span class="pn">200+</span>
         <h4>Atlanta Opera</h4>
         <p>Educational touring performances. Recording Academy Voting Member, Class of 2026.</p>
       </div>
-      <div class="pillar glass">
+      <div class="pillar glass glass-plum">
         <span class="pn">2022</span>
         <h4>The Pivot</h4>
         <p>"In 2022, the Spirit called me back to a sound I thought I had left behind. This album is my answer."</p>
@@ -600,7 +618,7 @@
     <p class="stage-line">"The record became a room."</p>
 
     <!-- Lead bandstand footage — 16-piece live ensemble -->
-    <div class="lead-video glass">
+    <div class="lead-video glass glass-emerald">
       <div class="video-frame no-thumb">
         <iframe src="https://www.youtube-nocookie.com/embed/LfzEVg0-db0" title="HeART Museum Live — 16-Piece Bandstand" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -609,7 +627,7 @@
     <p class="video-note">Placeholder footage until the confirmed Vinyl at Center Stage reel is delivered.</p>
 
     <div class="video-grid">
-      <div class="video-card glass">
+      <div class="video-card glass glass-emerald">
         <div class="video-frame">
           <iframe src="https://www.youtube-nocookie.com/embed/g3J3i8RFFl8" title="A Day — Official Music Video" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -618,7 +636,7 @@
           <div class="award-row"><span class="award-chip">Best Original Music Video Winner · 2026</span></div>
         </div>
       </div>
-      <div class="video-card glass">
+      <div class="video-card glass glass-emerald">
         <div class="video-frame">
           <iframe src="https://www.youtube-nocookie.com/embed/HApAKDlnAcU" title="Fireflies — Official Music Video" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -651,22 +669,22 @@
 
     <!-- Selected work — four wall panels, museum-numbered, not freelance-marketplace cards -->
     <div class="portfolio-grid">
-      <div class="studio-panel">
+      <div class="studio-panel glass glass-gold">
         <span class="pn">I</span>
         <h4>Original Composition</h4>
         <p>Full-length songwriting, from first idea to lead sheet, built for live ensemble arrangement.</p>
       </div>
-      <div class="studio-panel">
+      <div class="studio-panel glass glass-gold">
         <span class="pn">II</span>
         <h4>Vocal Production</h4>
         <p>Lead and background vocal production across soul, R&amp;B and classical-adjacent repertoire.</p>
       </div>
-      <div class="studio-panel">
+      <div class="studio-panel glass glass-gold">
         <span class="pn">III</span>
         <h4>Live Ensemble Orchestration</h4>
         <p>Strings and horns, scored for a full live band — not a programmed session.</p>
       </div>
-      <div class="studio-panel">
+      <div class="studio-panel glass glass-gold">
         <span class="pn">IV</span>
         <h4>Artist Development</h4>
         <p>Guidance carried from first idea through a finished, performance-ready record.</p>
