@@ -109,7 +109,7 @@
   .btn-glass-gold{
     background: radial-gradient(120% 160% at 50% 50%, rgba(230,199,102,0.55), rgba(156,122,60,0.35));
     border: 1px solid rgba(212,175,55,0.6);
-    border-radius: 999px;
+    border-radius: 10px;
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
     box-shadow: 0 0 70px 6px rgba(212,175,55,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
@@ -133,7 +133,7 @@
   .btn-glass-outline{
     background: linear-gradient(160deg, rgba(244,241,234,0.10), rgba(244,241,234,0.03));
     border: 1px solid var(--gold-hair);
-    border-radius: 999px;
+    border-radius: 10px;
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     box-shadow: 0 0 40px 2px rgba(212,175,55,0.12), inset 0 1px 0 rgba(244,241,234,0.15);
@@ -319,10 +319,10 @@
     text-align:center; margin-top:16px; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--alabaster-dim);
   }
   .video-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; margin-bottom:56px; }
-  .video-card{ border:1px solid var(--gold-hair); border-radius:6px; overflow:hidden; }
+  .video-card{ border:1px solid var(--gold-hair); border-radius:6px; overflow:hidden; display:flex; flex-direction:column; }
   .video-frame{ position:relative; aspect-ratio:16/9; background:rgba(0,0,0,.5); overflow:hidden; }
   .video-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
-  .video-meta{ padding:20px 22px; text-align:center; }
+  .video-meta{ padding:20px 22px; text-align:center; flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; }
   .video-meta h4{ font-size:1.15rem; font-style:italic; margin-bottom:8px; }
   .award-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:10px; }
   .award-chip{
