@@ -104,6 +104,16 @@
   .btn-glass-gold:hover{
     box-shadow: 0 0 90px 10px rgba(212,175,55,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
   }
+  /* Brighter, heavier variant — used only for the two CTAs that need to stand out most */
+  .btn-glass-gold-bright{
+    background: radial-gradient(120% 160% at 50% 50%, rgba(230,199,102,0.75), rgba(156,122,60,0.5));
+    border-color: rgba(212,175,55,0.85);
+    box-shadow: 0 0 90px 10px rgba(212,175,55,0.5), inset 0 1px 0 rgba(255,255,255,0.35);
+    font-weight: 700;
+  }
+  .btn-glass-gold-bright:hover{
+    box-shadow: 0 0 110px 14px rgba(212,175,55,0.65), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
   
   /* Secondary hero button — same glass mechanics, quieter neutral tint, keeps the hierarchy */
   .btn-glass-outline{
@@ -447,7 +457,7 @@
     </div>
     <p class="hero-tagline">Eight songs. <span class="gold-accent">One live band.</span> No shortcuts.</p>
     <div class="hero-actions">
-      <a href="#gallery" class="mus-btn btn-glass-gold" data-link>Enter the Gallery / Listen</a>
+      <a href="#gallery" class="mus-btn btn-glass-gold btn-glass-gold-bright" data-link>Enter the Gallery / Listen</a>
       <a href="#stage" class="mus-btn btn-glass-outline" data-link>Watch Live Staging</a>
     </div>
   </div>
@@ -653,7 +663,7 @@
     <p style="font-size:.8rem; color:var(--alabaster-dim); margin-bottom:34px; text-align:center;">Official videos hosted on YouTube — <span style="color:var(--gold)">@TravisHallMusik</span></p>
 
     <div style="text-align:center;">
-      <a href="#" class="mus-btn btn-ghost" data-link>Download 16-Piece Stage Plot &amp; Tech Rider (PDF)</a>
+      <a href="#" class="mus-btn btn-glass-gold" data-link>Download 16-Piece Stage Plot &amp; Tech Rider (PDF)</a>
     </div>
   </div>
 </section>
@@ -692,7 +702,7 @@
     </div>
 
     <div style="margin-top:56px; text-align:center;">
-      <a href="#visit" class="mus-btn btn-gold" data-link>Inquire Through Management</a>
+      <a href="#visit" class="mus-btn btn-glass-gold" data-link>Inquire Through Management</a>
     </div>
   </div>
 </section>
@@ -747,7 +757,7 @@
           <p style="color:var(--alabaster-dim); font-size:.86rem; margin:0 0 12px;">Present PR</p>
           <a href="mailto:marilyn@presentpr.biz">marilyn@presentpr.biz</a>
         </div>
-        <a href="#" class="mus-btn btn-gold" data-link style="width:100%; justify-content:center;">Download Executive EPK</a>
+        <a href="#" class="mus-btn btn-glass-gold" data-link style="width:100%; justify-content:center;">Download Executive EPK</a>
       </div>
     </div>
   </div>
@@ -790,7 +800,7 @@
       <h3>Join the Private Archive for private invitations, first access to physical vinyl, unreleased studio notes, and special invitations.</h3>
       <form class="pa-form" id="paForm">
         <input type="email" id="paEmail" placeholder="Your email address" required aria-label="Email address">
-        <button type="submit" class="mus-btn btn-gold">Request Access</button>
+        <button type="submit" class="mus-btn btn-glass-gold btn-glass-gold-bright">Request Access</button>
       </form>
       <p class="pa-note" id="paNote"></p>
     </div>
