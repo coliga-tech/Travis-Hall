@@ -73,7 +73,7 @@
   } */
   .glass{
     --glass-tint: 11,19,43;
-    --glass-alpha: 0.16;
+    --glass-alpha: 0.18;
     position:relative;
     overflow:hidden;
     background:
@@ -81,8 +81,8 @@
       rgba(var(--glass-tint), var(--glass-alpha));
     border: 1px solid var(--gold-hair);
     border-radius:4px;
-    backdrop-filter: blur(30px) saturate(140%);
-    -webkit-backdrop-filter: blur(30px) saturate(140%);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
     box-shadow: 0 24px 60px -28px rgba(0,0,0,.65), inset 0 1px 0 rgba(244,241,234,0.10);
   }
   .glass::before{
@@ -90,14 +90,14 @@
     position:absolute; z-index:0; pointer-events:none;
     left:50%; top:50%; transform:translate(-50%,-50%);
     width:92%; height:65%;
-    background: rgba(var(--glass-tint), 0.35);
+    background: rgba(var(--glass-tint), 0.55);
     filter: blur(38px);
   }
   .glass > *{ position:relative; z-index:1; }
   
-  .glass-plum{ --glass-tint: 26,11,46; --glass-alpha: 0.22; }
-  .glass-emerald{ --glass-tint: 10,34,24; --glass-alpha: 0.22; }
-  .glass-gold{ --glass-tint: 212,175,55; --glass-alpha: 0.14; }
+  .glass-plum{ --glass-tint: 26,11,46; --glass-alpha: 0.24; }
+  .glass-emerald{ --glass-tint: 10,34,24; --glass-alpha: 0.24; }
+  .glass-gold{ --glass-tint: 212,175,55; --glass-alpha: 0.16; }
   
   .brass-rule{ width:52px; height:1px; background:var(--brass-hi); }
 
