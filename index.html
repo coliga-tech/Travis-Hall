@@ -72,36 +72,32 @@
     -webkit-backdrop-filter: blur(30px) saturate(160%);
   } */
   .glass{
-    --glass-tint: 11,19,43; /* default = navy, i.e. "everything else" needs no extra class */
+    --glass-tint: 11,19,43;
+    --glass-alpha: 0.16;
     position:relative;
-    overflow:hidden; /* keeps the new inner glow contained to the card's rounded corners */
+    overflow:hidden;
     background:
       linear-gradient(160deg, rgba(244,241,234,0.06), rgba(244,241,234,0.02)),
-      rgba(var(--glass-tint), 0.3);
+      rgba(var(--glass-tint), var(--glass-alpha));
     border: 1px solid var(--gold-hair);
     border-radius:4px;
-    backdrop-filter: blur(30px) saturate(160%);
-    -webkit-backdrop-filter: blur(30px) saturate(160%);
+    backdrop-filter: blur(30px) saturate(140%);
+    -webkit-backdrop-filter: blur(30px) saturate(140%);
     box-shadow: 0 24px 60px -28px rgba(0,0,0,.65), inset 0 1px 0 rgba(244,241,234,0.10);
   }
-  /* Inner glow — a soft blurred ellipse of the card's own tint, sitting inside it for
-     depth, exactly like the "Ellipse 1" layer in your Figma reference. Different from
-     the diagonal streak you had removed earlier — this is a centered radial glow, not
-     a directional light sweep. */
   .glass::before{
     content:'';
     position:absolute; z-index:0; pointer-events:none;
     left:50%; top:50%; transform:translate(-50%,-50%);
     width:92%; height:65%;
-    background: rgba(var(--glass-tint), 0.5);
+    background: rgba(var(--glass-tint), 0.35);
     filter: blur(38px);
   }
   .glass > *{ position:relative; z-index:1; }
   
-  /* Room-specific tints — swap only the color, mechanics (blur/radius/shadow) stay identical */
-  .glass-plum{ --glass-tint: 26,11,46; }
-  .glass-emerald{ --glass-tint: 10,34,24; }
-  .glass-gold{ --glass-tint: 212,175,55; }
+  .glass-plum{ --glass-tint: 26,11,46; --glass-alpha: 0.22; }
+  .glass-emerald{ --glass-tint: 10,34,24; --glass-alpha: 0.22; }
+  .glass-gold{ --glass-tint: 212,175,55; --glass-alpha: 0.14; }
   
   .brass-rule{ width:52px; height:1px; background:var(--brass-hi); }
 
