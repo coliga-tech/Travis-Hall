@@ -163,7 +163,7 @@
   .brand .b1{ font-family:var(--serif); font-style:italic; font-size:1.05rem; letter-spacing:.02em; }
   .brand .b2{ font-size:.56rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-top:5px; }
 
-  .nav-links{ display:flex; gap:clamp(14px,2.2vw,30px); align-items:center; }
+  .nav-links{ display:flex; gap:clamp(14px,2.2vw,30px); align-items:center; flex:1; justify-content:center; }
   .nav-links a{
     font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
     color:rgba(244,241,234,0.68); position:relative; padding:6px 0;
@@ -230,7 +230,7 @@
     margin:0; font-family:var(--serif); font-style:italic; font-weight:400;
     font-size:clamp(1.3rem,2.3vw,1.7rem); line-height:1.5; color:var(--alabaster);
   }
-  .manifesto blockquote:first-of-type{ text-align:right; }
+  .manifesto blockquote:first-of-type{ text-align:center; }
   .manifesto-divider{ width:1px; align-self:stretch; background:var(--gold-hair); }
 
   .pillars{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:64px; }
@@ -432,7 +432,7 @@
   }
   @media (max-width:900px){
     .manifesto{ grid-template-columns:1fr; }
-    .manifesto blockquote:first-of-type{ text-align:left; }
+    .manifesto blockquote:first-of-type{ text-align:center; }
     .manifesto-divider{ width:100%; height:1px; }
     .archive-lower{ grid-template-columns:1fr; }
   }
@@ -465,12 +465,12 @@
   </a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
   <div class="nav-links" id="navLinks">
-    <a href="#foyer" data-nav><span class="num">I.</span>Foyer</a>
-    <a href="#gallery" data-nav><span class="num">II.</span>Gallery</a>
-    <a href="#stage" data-nav><span class="num">III.</span>Stage</a>
-    <a href="#studio" data-nav><span class="num">IV.</span>Studio</a>
-    <a href="#archive" data-nav><span class="num">V.</span>Archive</a>
-    <a href="#visit" data-nav><span class="num">VI.</span>Visit</a>
+    <a href="#foyer" data-nav>Foyer</a>
+    <a href="#gallery" data-nav>Gallery</a>
+    <a href="#stage" data-nav>Stage</a>
+    <a href="#studio" data-nav>Studio</a>
+    <a href="#archive" data-nav>Archive</a>
+    <a href="#visit" data-nav>Visit</a>
   </div>
 </nav>
 
@@ -486,7 +486,7 @@
 <section id="foyer">
   <div class="glow" style="width:900px;height:900px;background:var(--gold);top:-260px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="brass-rule"></span>Foyer</div>
+    <div class="eyebrow">Foyer</div>
 
     <div class="manifesto">
       <blockquote>"I write the way I trained to sing. For the whole room, not just the chorus."</blockquote>
@@ -498,7 +498,7 @@
 <section id="gallery">
   <div class="glow" style="width:700px;height:700px;background:var(--plum);top:-160px;left:50%;transform:translateX(-50%);opacity:.4;"></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="brass-rule"></span>Gallery</div>
+    <div class="eyebrow">Gallery</div>
 
     <!-- Canvas triptych — the major visual focal point of the Gallery -->
     <div class="triptych">
@@ -524,7 +524,7 @@
 <section id="stage">
   <div class="glow" style="width:720px;height:720px;background:var(--gold);top:40px;left:50%;transform:translateX(-50%);opacity:.16;"></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="brass-rule"></span>Stage</div>
+    <div class="eyebrow">Stage</div>
     <p class="stage-line">"The record became a room."</p>
 
     <!-- Lead bandstand footage — 16-piece live ensemble -->
@@ -567,7 +567,7 @@
 <section id="studio">
   <div class="glow" style="width:640px;height:640px;background:var(--gold);top:50%;left:50%;transform:translate(-50%,-50%);opacity:.08;"></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="brass-rule"></span>Studio</div>
+    <div class="eyebrow">Studio</div>
     <p class="studio-line">"From the first idea to the finished record."</p>
 
     <p class="studio-flow">Every record starts the same way: an idea, alone at the piano. From there it moves through co-writing, vocal production, rhythm section and live ensemble scoring, background vocal arranging, and strings-and-horns orchestration, until a sketch becomes a fully scored, performance-ready record. Development isn't treated as a separate service. It's the same practice, turned toward the artist instead of the song.</p>
@@ -606,7 +606,7 @@
 <section id="archive">
   <div class="glow" style="width:780px;height:780px;background:var(--emerald);top:-100px;left:50%;transform:translateX(-50%);opacity:.32;"></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="brass-rule"></span>Archive</div>
+    <div class="eyebrow">Archive</div>
     <h2 class="section-title">Press, credentials, and recognition.</h2>
 
     <div class="quotes-grid">
@@ -658,7 +658,7 @@
 <section id="visit">
   <div class="glow" style="width:780px;height:780px;background:var(--gold);top:120px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="brass-rule"></span>Visit</div>
+    <div class="eyebrow">Visit</div>
 
     <div class="visit-grid">
       <div class="path-card glass">
@@ -672,7 +672,7 @@
 
     <!-- Private Archive — VIP concierge module, positioned above the footer, not a nav tab -->
     <div class="private-archive glass">
-      <div class="eyebrow"><span class="brass-rule"></span>Private Archive</div>
+      <div class="eyebrow">Private Archive</div>
       <h3>Join the Private Archive for private invitations, first access to physical vinyl, unreleased studio notes, and special invitations.</h3>
       <form class="pa-form" id="paForm">
         <input type="email" id="paEmail" placeholder="Your email address" required aria-label="Email address">
