@@ -365,7 +365,6 @@
   .film-list .film-multi{ text-align:right; line-height:1.8; }
 
   /* ---------------- Visit ---------------- */
-  .visit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin:46px 0 60px; }
   .path-card{ padding:32px 26px; border-radius:4px; transition:transform .3s var(--ease); }
   .path-card:hover{ transform:translateY(-4px); }
   .path-card .pn{ font-family:var(--serif); font-style:italic; color:var(--gold); font-size:1.6rem; margin-bottom:14px; display:block; }
@@ -376,6 +375,7 @@
   .path-card a.mail:hover{ color:var(--gold); border-color:var(--gold); }
   .path-card .sub-link{ display:block; margin-top:12px; font-size:.72rem; letter-spacing:.06em; color:var(--gold); }
   .path-card-press{ text-align:center; }
+  .path-card-press-wrap{ max-width:400px; margin:0 auto; }
 
   /* Private Archive — VIP concierge module (above footer, not a nav tab) */
   .private-archive{
@@ -449,7 +449,6 @@
     .nav-toggle{ display:flex; }
     .triptych{ grid-template-columns:1fr; }
     .panel.center{ transform:none; order:-1; }
-    .visit-grid{ grid-template-columns:1fr; }
     .scope-list{ grid-template-columns:1fr; }
     .portfolio-grid{ grid-template-columns:1fr; }
     .drawer-body-inner{ grid-template-columns:1fr; padding-left:26px; }
@@ -662,7 +661,7 @@
   <div class="wrap">
     <div class="eyebrow">Visit</div>
 
-    <div class="visit-grid">
+    <div class="path-card-press-wrap">
       <div class="path-card glass path-card-press">
         <h4>Press &amp; Institutional Inquiries</h4>
         <p>Interviews, features, and institutional partnerships — routed through Present PR.</p>
